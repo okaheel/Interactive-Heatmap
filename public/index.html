@@ -41,10 +41,11 @@
   }
 
   var feature = features[0];
+  var link = "https://data.eol.ucar.edu/dataset/";
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] }) //popup 
     .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.summary + '</p>' + '<a href="https://www.w3schools.com/html/"> "Find dataset here" </a>')
+    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.summary + '</p>' + '<a href="https://data.eol.ucar.edu/dataset/" + features.properties.dataset_id> "Find dataset here" </a>')
     .addTo(map);
 });
     </script>
