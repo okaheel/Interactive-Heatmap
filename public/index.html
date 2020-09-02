@@ -33,7 +33,7 @@
 
     map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['interactive_element'] // layername
+    layers: ['datasets copy'] // layername
   });
 
   if (!features.length) {
@@ -41,12 +41,10 @@
   }
 
   var feature = features[0];
-  var final_text = "https://data.eol.ucar.edu/dataset/".concat(feature.properties.archive_ident);
-
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] }) //popup 
     .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.summary + '</p>' + '<a href="' + final_text + '">Find Dataset here</a>')
+    .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.summary + '</p>')
     .addTo(map);
 });
     </script>
